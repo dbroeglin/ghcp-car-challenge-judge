@@ -13,10 +13,19 @@ body:
       required: true
 
   - type: input
+    id: repository-url
+    attributes:
+      label: Repository URL
+      description: Enter the URL of your application's GitHub repository
+      placeholder: e.g. https://github.com/username/my-app
+    validations:
+      required: true
+
+  - type: input
     id: application-url
     attributes:
       label: Application URL
       description: Enter the URL of your deployed application
-      placeholder: e.g. https://my-app.azurewebsites.net
+      placeholder: e.g. https://username.github.io/my-app
     validations:
       required: true
