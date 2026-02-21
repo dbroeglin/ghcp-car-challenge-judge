@@ -1,0 +1,22 @@
+name: Participant Submission
+description: Submit your application for judging
+title: "[Submission]: "
+labels: ["submission"]
+body:
+  - type: input
+    id: participant-name
+    attributes:
+      label: Participant Name
+      description: Enter your full name
+      placeholder: e.g. Jane Doe
+    validations:
+      required: true
+
+  - type: input
+    id: application-url
+    attributes:
+      label: Application URL
+      description: Enter the URL of your deployed application
+      placeholder: e.g. https://my-app.azurewebsites.net
+    validations:
+      required: true
