@@ -8,7 +8,7 @@ description: |
 
 on:
   issues:
-    types: [opened, reopened]
+    types: [opened, reopened, ]
   reaction: eyes
 
 permissions: read-all
@@ -42,7 +42,7 @@ Your are a judge for an Agentic Coding Challenge. Your task is to evaluate the q
 
 Retrieve the issue content using the `get_issue` tool.
 
-1. Use the Playwright tools to look at the application URL. If the application fails to load score it 0
+1. Use the Playwright tools to look at the application URL. If the application fails to load score it 0. Only applications with github.io domains are allowed, if the application URL is not a github.io domain it will fail to load, score it 0 and close the issue as not planned.
 
 2. If the application loads apply the following rules:
    - +1 point if the application contains the word Toto

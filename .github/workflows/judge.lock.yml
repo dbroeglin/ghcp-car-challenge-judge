@@ -27,7 +27,7 @@
 # reproduction steps, and resource links. Helps maintainers quickly understand and
 # prioritize incoming issues.
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"3b481a38fe06b90ebe3e4752b5552789ce62272951b659d49e63121f6e86c0a1","compiler_version":"v0.48.1"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"7d2e2761f731f6cbe6753ca4940a87dc091bf0d9ac30ff7f8f050f9703ad0b7f","compiler_version":"v0.48.1"}
 
 name: "Agentic Coding Challenge Judge"
 "on":
