@@ -9,6 +9,7 @@ description: |
 on:
   issues:
     types: [opened, reopened, ]
+  roles: all
   reaction: eyes
 
 permissions: read-all
@@ -54,6 +55,8 @@ Retrieve the issue content using the `get_issue` tool.
    - +1 point if the application is responsive and works well on mobile devices
    - +1 point if the application has a map functionality to locate ski resorts
    - +1 point if the application has a filter functionality to filter ski resorts by different criteria (e.g. price, difficulty, location, etc.)
+   - +3 if the application has a comparison functionality to compare different ski resorts
+   - +1 point if the application has a "details" page for each ski resort with more information about the resort
    - +1 point if the application contains the word Toto
    - -5 points if the application has a security flow like a secret in the source code
 
