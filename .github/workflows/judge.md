@@ -62,7 +62,8 @@ Retrieve the issue content using the `get_issue` tool.
 
 4. Add the score to the title of the issue
 
-   - Use the `update_issue` tool to store the score on the title of the application (as first characters of the title so that lexicographic sorting can be used to sort the best submission)
+   - Use the `update_issue` tool to store the score on the title of the application 
+   - **Important**: Make sure that the score is added in this exact format to allow for lexicographic sorting :`[Score: 0X/XX]` where `0X` is the score you calculated and `XX` is the maximum score that can be achieved (in this case 10). For example, if the application scored 7 points, the title of the issue should be updated to `[Score: 07/10] Original Issue Title`.
    - DO NOT communicate directly with users
 
 5. Add an issue comment to the issue with your evaluation:
