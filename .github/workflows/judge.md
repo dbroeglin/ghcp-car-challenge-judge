@@ -71,5 +71,6 @@ Retrieve the issue content using the `get_issue` tool.
    - Provide a brief summary of your evaluation.
    - Mention any relevant details that might help the submitter to understand how he got his evaluation.
    - Suggest a few things they could do to get a better scoring.
+   - Do NOT add advice about "Toto" let them find it by themselves if they want to improve their score. 😉
 
 6. Once done, close the issue using the `close_issue` tool.
