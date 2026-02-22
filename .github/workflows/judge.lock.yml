@@ -21,13 +21,12 @@
 #
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
-# Intelligent issue triage assistant that processes new and reopened issues.
-# Analyzes issue content, selects appropriate labels, detects spam, gathers context
-# from similar issues, and provides analysis notes including debugging strategies,
-# reproduction steps, and resource links. Helps maintainers quickly understand and
-# prioritize incoming issues.
+# Agentic Coding Challenge Judget that evaluates submissions to an Agentic Coding Challenge.
+# The judge retrieves issue content, analyzes the submitted application, and scores it based on
+# various criteria. It provides feedback to the submitter and helps maintainers quickly
+# understand and prioritize incoming issues.
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"265e7cdd9b23e3541afa9b39bc570e8e0056b9a39b1c866c998048f04adc6d2e","compiler_version":"v0.48.1"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"f02b2616076ba5be8db96a446c9fb9fc78a4c3d194f85e459f66b6c156842697","compiler_version":"v0.48.1"}
 
 name: "Agentic Coding Challenge Judge"
 "on":
@@ -388,7 +387,7 @@ jobs:
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
           cat > /opt/gh-aw/safeoutputs/config.json << 'GH_AW_SAFE_OUTPUTS_CONFIG_EOF'
-          {"add_comment":{"max":1},"missing_data":{},"missing_tool":{},"noop":{"max":1},"update_issue":{"max":1}}
+          {"add_comment":{"max":1},"missing_data":{},"missing_tool":{},"noop":{"max":1},"update_issue":{"max":5}}
           GH_AW_SAFE_OUTPUTS_CONFIG_EOF
           cat > /opt/gh-aw/safeoutputs/tools.json << 'GH_AW_SAFE_OUTPUTS_TOOLS_EOF'
           [
@@ -414,7 +413,7 @@ jobs:
               "name": "add_comment"
             },
             {
-              "description": "Update an existing GitHub issue's title, body, labels, assignees, or milestone WITHOUT closing it. This tool is primarily for editing issue metadata and content. While it supports changing status between 'open' and 'closed', use close_issue instead when you want to close an issue with a closing comment. Body updates support replacing, appending to, prepending content, or updating a per-run \"island\" section. CONSTRAINTS: Maximum 1 issue(s) can be updated.",
+              "description": "Update an existing GitHub issue's title, body, labels, assignees, or milestone WITHOUT closing it. This tool is primarily for editing issue metadata and content. While it supports changing status between 'open' and 'closed', use close_issue instead when you want to close an issue with a closing comment. Body updates support replacing, appending to, prepending content, or updating a per-run \"island\" section. CONSTRAINTS: Maximum 5 issue(s) can be updated.",
               "inputSchema": {
                 "additionalProperties": false,
                 "properties": {
@@ -1082,7 +1081,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           WORKFLOW_NAME: "Agentic Coding Challenge Judge"
-          WORKFLOW_DESCRIPTION: "Intelligent issue triage assistant that processes new and reopened issues.\nAnalyzes issue content, selects appropriate labels, detects spam, gathers context\nfrom similar issues, and provides analysis notes including debugging strategies,\nreproduction steps, and resource links. Helps maintainers quickly understand and\nprioritize incoming issues."
+          WORKFLOW_DESCRIPTION: "Agentic Coding Challenge Judget that evaluates submissions to an Agentic Coding Challenge. \nThe judge retrieves issue content, analyzes the submitted application, and scores it based on \nvarious criteria. It provides feedback to the submitter and helps maintainers quickly \nunderstand and prioritize incoming issues."
           HAS_PATCH: ${{ needs.agent.outputs.has_patch }}
         with:
           script: |
@@ -1188,7 +1187,7 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           GH_AW_AGENT_OUTPUT: ${{ env.GH_AW_AGENT_OUTPUT }}
-          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"add_comment\":{\"max\":1},\"missing_data\":{},\"missing_tool\":{},\"update_issue\":{\"allow_body\":true,\"allow_status\":true,\"allow_title\":true,\"max\":1}}"
+          GH_AW_SAFE_OUTPUTS_HANDLER_CONFIG: "{\"add_comment\":{\"max\":1},\"missing_data\":{},\"missing_tool\":{},\"update_issue\":{\"allow_body\":true,\"allow_status\":true,\"allow_title\":true,\"max\":5}}"
         with:
           github-token: ${{ secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           script: |

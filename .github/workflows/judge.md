@@ -1,10 +1,9 @@
 ---
 description: |
-  Intelligent issue triage assistant that processes new and reopened issues.
-  Analyzes issue content, selects appropriate labels, detects spam, gathers context
-  from similar issues, and provides analysis notes including debugging strategies,
-  reproduction steps, and resource links. Helps maintainers quickly understand and
-  prioritize incoming issues.
+  Agentic Coding Challenge Judget that evaluates submissions to an Agentic Coding Challenge. 
+  The judge retrieves issue content, analyzes the submitted application, and scores it based on 
+  various criteria. It provides feedback to the submitter and helps maintainers quickly 
+  understand and prioritize incoming issues.
 
 on:
   issues:
@@ -20,6 +19,7 @@ safe-outputs:
   update-issue:
     title:
     status:
+    max: 5    
   add-comment:
 
 tools:
